@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer Page</title>
+</head>
+<body>
+<h1>Footer 1</h1>
+<footer class="fragment-tag" th:fragment="footer-include">
+    <h1>Footer Include Successfully.</h1>
+</footer>
+<hr>
+<h1>Footer 2</h1>
+<footer class="fragment-tag" th:fragment="footer-replace">
+    <h1>Footer Replaced Successfully.</h1>
+
+</footer>
+<hr>
+<h1>Footer 3</h1>
+<footer class="fragment-tag" th:fragment="footer-insert(subtitle, title)" th:style="'background-color: coral'">
+    <h1>Footer Inserted Successfully.</h1>
+    <h2 th:text="${title}"></h2>
+    <h3 th:text="${subtitle}"></h3>
+</footer>
+<hr>
+</body>
+</html>

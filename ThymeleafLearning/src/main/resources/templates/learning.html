@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Page</title>
+</head>
+<body>
+<h1><b>Spring Boot Learning Page</b></h1>
+<hr>
+<h1>Retrieving Data from Class</h1>
+<p><b>Name: </b><span th:text="${name}"></span></p>
+<p><b>Email: </b><span th:text="${email}"></span></p>
+<p><b>Role: </b><span th:text="${role}"></span></p>
+<p><b>Number: </b><span th:text="${number}"></span></p>
+<hr>
+<h1>Retrieving Data from Class using Thymeleaf methods</h1>
+<p><b>Name: </b><span th:text="${#strings.toUpperCase(name)}"></span></p>
+<p><b>Email: </b><span th:text="${#strings.toLowerCase(email)}"></span></p>
+<p><b>Email Length: </b><span th:text="${#strings.length(email)}"></span></p>
+<p><b>Role: </b><span th:text="${role}"></span></p>
+<p><b>Number: </b><span th:text="${number}"></span></p>
+<hr>
+<div th:with="a=64, b=11, a_name='harshil', b_name='krishna'">
+    <h4>Value of a is <span th:text="${a}"></span></h4>
+    <h4>Value of b is <span th:text="${b}"></span></h4>
+    <h4 th:text="'Value of ' + ${a} + '+' + ${b} + ' is ' + ${a+b}"></h4>
+    <h4 th:text="'Value of a_name and b_name is ' + ${a_name} + ' and ' + ${b_name} + ' repectively.'"></h4>
+</div>
+<hr>
+<div>
+    <ul>
+        <li th:each="name, status : ${list}">
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter' "
+                  th:text="'name = ' + ${name}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'index = ' + ${status.index}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'current = ' + ${status.current}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'count = ' + ${status.count}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'even = ' + ${status.even}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'odd = ' + ${status.odd}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'first = ' + ${status.first}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'last = ' + ${status.last}"></span>
+            <span th:style="${status.even} ? 'font-weight:bolder' : 'font-weight:lighter'"
+                  th:text="'size = ' + ${status.size}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

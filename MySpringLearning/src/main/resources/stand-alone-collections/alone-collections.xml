@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util
+                            http://www.springframework.org/schema/util/spring-util.xsd">
+<!--    List Example-->
+    <util:list list-class="java.util.LinkedList" id="cities">
+        <value>Surat</value>
+        <value>Vadodara</value>
+        <value>Anand</value>
+    </util:list>
+
+<!--    Set Example-->
+    <util:set set-class="java.util.LinkedHashSet" id="citiesSet">
+        <value>Surat</value>
+        <value>Vadodara</value>
+        <value>Anand</value>
+        <value>Surat</value>
+        <value>Vadodara</value>
+        <value>Anand</value>
+    </util:set>
+
+<!--    Map Example-->
+    <util:map map-class="java.util.HashMap" id="map">
+        <entry key="1" value="A"/>
+        <entry key="2" value="B"/>
+        <entry key="3" value="C"/>
+    </util:map>
+
+<!--    Properties Example-->
+    <util:properties id="properties">
+        <prop key="drive">com.mysql.jdbc.driver</prop>
+        <prop key="username">harsh</prop>
+        <prop key="password">password</prop>
+        <prop key="url">mysql://localhost:3306/database</prop>
+    </util:properties>
+
+<!--    injecting-->
+    <bean class="StandAloneCollections.State"
+          name="gujarat">
+        <property name="name" value="Gujarat"/>
+        <property name="cities" ref="cities"/>
+    </bean>
+
+</beans>

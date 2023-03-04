@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car1" class="DependencyInjection.XMLBased.ReferenceObjects.Ferrari"/>
+    <bean id="car2" class="DependencyInjection.XMLBased.ReferenceObjects.McLaren"/>
+    <bean id="car3" class="DependencyInjection.XMLBased.ReferenceObjects.RollsRoyce"/>
+
+    <bean id="producer" class="DependencyInjection.XMLBased.ReferenceObjects.Producer">
+        <property name="car" ref="car2"/>
+    </bean>
+
+</beans>

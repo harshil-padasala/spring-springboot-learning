@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Condition Methods</title>
+</head>
+<body>
+<h1>Condition Method 1 </h1>
+<h3><b>User is <span th:style="${isActive} ? 'color:green' : 'color:red'"
+                     th:text="${isActive} ? 'ACTIVE' : 'NOT ACTIVE'"></span></b></h3>
+<hr>
+<h1>Condition Method 2 </h1>
+<h3 th:if="${gender} == 'M'"><b>hGender is Male.</b></h3>
+<h3 th:unless="${gender} == 'M'"><b>Gender is Female.</b></h3>
+<hr>
+<h1>Condition Method 3 </h1>
+<div th:switch="${#lists.size(list)}">
+    <h3 th:case="'0'">List size is 0.</h3>
+    <h3 th:case="'1'">List size is 1.</h3>
+    <h3 th:case="*">List contain more than one element.</h3>
+</div>
+</body>
+</html>

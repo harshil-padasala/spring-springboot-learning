@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="a" class="DependencyInjection.XMLBased.CollectionObjects.A">
+        <property name="list">
+            <list>
+                <value>Krishna</value>
+                <value>Harshil</value>
+                <value>Hasti</value>
+                <value>Dheye</value>
+                <value>Henisha</value>
+                <list>
+                    <value>K</value>
+                    <value>H</value>
+                    <value>H</value>
+                    <value>D</value>
+                    <value>H</value>
+                </list>
+                <null/>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>Krishna</value>
+                <value>Harshil</value>
+                <value>Hasti</value>
+                <value>Krishna</value>
+                <value>Hasti</value>
+                <set>
+                    <value>K</value>
+                    <value>H</value>
+                    <value>H</value>
+                    <value>D</value>
+                    <value>H</value>
+                </set>
+                <null/>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="1" value="Gujarat"/>
+                <entry key="2" value="Maharashtra"/>
+                <entry key="3" value="Rajasthan"/>
+                <entry key="4" value="MadhyaPradesh"/>
+            </map>
+        </property>
+
+
+        <!--Results in a setAddressProp(java.util.Properties) call -->
+        <property name="properties">
+            <props>
+                <prop key="one">Gujarat</prop>
+                <prop key="two">Maharashtra</prop>
+                <prop key="three">Rajasthan</prop>
+                <prop key="four">MadhyaPradesh</prop>
+            </props>
+        </property>
+
+    </bean>
+</beans>

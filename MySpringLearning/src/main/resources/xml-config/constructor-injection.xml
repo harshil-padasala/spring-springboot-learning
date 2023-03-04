@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="cer" class="DependencyInjection.ConstructorInjection.Certi" c:name="Java SDE Level 10"/>
+
+    <bean name="person1" class="DependencyInjection.ConstructorInjection.Person"
+          c:name="Harshil"
+          c:personId="64"
+          c:certificate-ref="cer">
+        <constructor-arg index="3">
+            <list>
+                <value>Krishna</value>
+                <value>Harshil</value>
+                <value>Hasti</value>
+                <value>Dheye</value>
+                <value>Henisha</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+<!--    Below line by default take parameter as String value and call String parameterized constructor.
+        If it did not find the String parameterized constructor then it will search from top to bottom
+        in the program and execute first most related Constructor. In this case it call (double, double)
+        constructor.-->
+    <bean name="add1" class="DependencyInjection.ConstructorInjection.Ambiguity.Addition">
+        <constructor-arg value="11"/>
+        <constructor-arg value="40"/>
+    </bean>
+
+<!--    This will explicitly call (int, int) type constructor. -->
+    <bean name="add2" class="DependencyInjection.ConstructorInjection.Ambiguity.Addition">
+        <constructor-arg value="11" type="int"/>
+        <constructor-arg value="41" type="int"/>
+    </bean>
+
+    <bean name="add3" class="DependencyInjection.ConstructorInjection.Ambiguity.Addition">
+        <constructor-arg value="11" type="double"/>
+        <constructor-arg value="42" type="double"/>
+    </bean>
+
+</beans>

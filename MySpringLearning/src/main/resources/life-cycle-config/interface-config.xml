@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="LifeCycleMethods.UsingInterface.Bugatti"
+          name="bugatti1"
+          >
+        <property name="carName" value="Bugatti Veyron"/>
+        <property name="prize" value="100" />
+    </bean>
+
+    <bean class="LifeCycleMethods.UsingInterface.Bugatti"
+          name="bugatti2"
+    >
+        <property name="carName" value="Bugatti Chiron"/>
+        <property name="prize" value="111" />
+    </bean>
+
+</beans>
