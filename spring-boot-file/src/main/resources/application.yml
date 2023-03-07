@@ -1,0 +1,22 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      #      Threshold after which files are written to disk
+      file-size-threshold: 2KB
+      #      max-file-size
+      max-file-size: 100MB
+      #      max request size
+      max-request-size: 100MB
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/file?jdbcCompliantTruncation=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    properties:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: on
